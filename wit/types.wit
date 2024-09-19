@@ -1,0 +1,51 @@
+interface types {
+  //use jabratech:common/types.{pair, currency, option-kind, side, option-type, payout-ccy, instrument-kind, counterparty, user};
+  use jabratech:common/types.{option-kind};
+
+  record spot-scenario-request {
+    options: list<option-trade>
+  }
+
+  record spot-scenario-response {
+    aggr-scenarios: list<scenario>,
+    option-scenarios: list<option-scenario>
+  }
+
+  //==============================================
+  record vol-scenario-request {
+    options: list<option-trade>
+  }
+
+  record vol-scenario-response {
+    aggr-scenarios: list<scenario>,
+    option-scenarios: list<option-scenario>
+  }
+
+  //==============================================
+  record option-trade {
+    instrument-name: string,
+    option-kind: option-kind,
+    spot: f64, 
+    strike: f64, 
+    r2: f64, //rate (risk-free interest rate)
+    iv: f64, //sigma (volatility)
+    ttm: f64 //maturity (in years)
+  }
+
+  //==============================================
+  record option-scenario {
+    instrument-name: string,
+    scenarios: list<scenario>
+  }
+
+  record scenario {
+    bump: f64,
+    value: f64,
+    delta: f64, 
+    gamma: f64, 
+    vega: f64,
+    pnl: f64,
+    bf: f64,
+    rr: f64
+  }
+}

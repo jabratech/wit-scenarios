@@ -1,0 +1,9 @@
+interface scenarios-handler {    
+    use types.{
+      spot-scenario-request, spot-scenario-response,
+      vol-scenario-request, vol-scenario-response
+    };
+    
+    spot-scenario: func(request: spot-scenario-request) -> result<spot-scenario-response, string>;  
+    vol-scenario: func(request: vol-scenario-request) -> result<vol-scenario-response, string>;
+}
