@@ -42,10 +42,10 @@ interface types {
     bump: f64,
     value: f64,
     delta: f64, 
-    gamma: f64, 
+    gamma: f64,
+    theta: f64, 
     vega: f64,
-    pnl: f64,
-    bf: f64,
-    rr: f64
+    rho: f64,
+    pnl: f64
   }
 }
