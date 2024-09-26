@@ -25,6 +25,8 @@ interface types {
   record option-trade {
     instrument-name: string,
     option-kind: option-kind,
+    quantity: f64,
+    currency: string, //(base or quote)
     spot: f64, 
     strike: f64, 
     r2: f64, //rate (risk-free interest rate)
