@@ -31,7 +31,7 @@ interface types {
     strike: f64, 
     r2: f64, //rate (risk-free interest rate)
     iv: f64, //sigma (volatility)
-    ttm: f64 //maturity (in years)
+    ttm: f64 //maturity (in days)
   }
 
   //==============================================
